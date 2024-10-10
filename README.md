@@ -3,7 +3,7 @@ Simple way to start LivePortrait on TensorRT.
 
 # Installation
 Download image:
-docker pull shacotustra/trt-lp
+```docker pull shacotustra/trt-lp```
 
 Run the container:
 docker run -it --gpus=all \
