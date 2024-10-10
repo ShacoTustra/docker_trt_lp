@@ -4,12 +4,21 @@ Simple way to start LivePortrait on TensorRT.
 # Installation
 Download image:
 ```docker pull shacotustra/trt-lp```
-
+or if you want to run a server:
+```docker pull shacotustra/trt-lp-server``` 
 Run the container:
 ```
 docker run -it --gpus=all \
 --restart=always \
 shacotustra/trt-lp \
+/bin/bash
+```
+or if you want to run a server (replace 8010 with a port, that you want to run a server on):
+```
+docker run -it --gpus=all \
+--restart=always \
+-p 8010:8010
+shacotustra/trt-lp-server \
 /bin/bash
 ```
 
@@ -39,4 +48,9 @@ Try it:
 python run.py \
  --src_image assets/examples/source/s1.jpg \
  --dri_video assets/examples/driving/d0.mp4
+```
+If you want to run a server (replace 8010 with a port that you want to run a server on):
+```
+python api_server.py \
+ --port 8010
 ```
